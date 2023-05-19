@@ -2,7 +2,7 @@
 Author: “Vehshanaan” 1959180242@qq.com
 Date: 2023-05-17 12:23:17
 LastEditors: “Vehshanaan” 1959180242@qq.com
-LastEditTime: 2023-05-17 12:34:31
+LastEditTime: 2023-05-19 10:29:45
 FilePath: \AI_Coursework\代码\DataReader.py
 Description: 
 
@@ -30,8 +30,11 @@ Y = data[:,-1]
 X = np.array(X)
 Y = np.array(Y)
 
+print(np.shape(X))
+
+'''
 np.save(save_path_X, X)
 np.save(save_path_Y, Y)
-
+'''
 
 

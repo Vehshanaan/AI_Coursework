@@ -1,0 +1,10 @@
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QKNR: In this report I will try to find the optimal nneighbours, weights, and p. nneighbors: how many nearest neighbors the algorithm use to predict the output value.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qweights: affects the weights used in the output generating.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Quniform: all nearest neighbors have the same weight.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qdistance: use distance as weights for the neighbors, distant neighbors have lower weights.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qp: DTR\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qweights: changes the weights used in the output generating.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qp=2: DTR\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qp: changes the type of distance used in the algorithm p=1: apply Manhattan distance for distance calculation.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QDTR: In this report I will try to find the optimal maxdepth, minsamplesleaf, and splitter maxdepth: the maximum depth of the tree.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QOther hyperparameters: the hyperparameters applied but not discussed in this report: criterion: \"squarederror\" : use mean squared error as criterion when choosing splitting strategies for the nodes.\\E$"}
