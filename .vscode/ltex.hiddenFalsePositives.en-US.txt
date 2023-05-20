@@ -8,3 +8,7 @@
 {"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qp: changes the type of distance used in the algorithm p=1: apply Manhattan distance for distance calculation.\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QDTR: In this report I will try to find the optimal maxdepth, minsamplesleaf, and splitter maxdepth: the maximum depth of the tree.\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QOther hyperparameters: the hyperparameters applied but not discussed in this report: criterion: \"squarederror\" : use mean squared error as criterion when choosing splitting strategies for the nodes.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Qother parameters applied but not discussed in this report: algorithm: \"auto\" leafsize: 30 metric: \"minkowski\" metricparams: \"None\" njobs: None\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe performance reaches its peak when the value of nneighbors is around 5.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QSearch for optimal hyperparameters: Candidates: nneighbors = 1\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, weights = 'uniform', 'distance', p = 1,2\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe optimal hyperparameters found in the searching are: nneighbors = 7 p = 1 weights = 'distance'\\E$"}

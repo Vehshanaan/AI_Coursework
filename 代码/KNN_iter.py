@@ -2,7 +2,7 @@
 Author: “Vehshanaan” 1959180242@qq.com
 Date: 2023-05-18 12:17:16
 LastEditors: “Vehshanaan” 1959180242@qq.com
-LastEditTime: 2023-05-18 17:23:02
+LastEditTime: 2023-05-20 16:28:46
 FilePath: \AI_Coursework\代码\KNN_iter.py
 Description: 
 
@@ -53,7 +53,7 @@ param_grid = {
 cv = KFold(n_splits=10,shuffle=True,random_state=42)
 
 # 创建GridSearchCV对象
-grid_search = GridSearchCV(knr, param_grid,cv=cv,scoring="r2",verbose=1)#"neg_mean_squared_error")
+grid_search = GridSearchCV(knr, param_grid,cv=cv,scoring="neg_mean_squared_error",verbose=1)#"neg_mean_squared_error")
 grid_search.fit(Xtr,Ytr)
 
 best_params = grid_search.best_params_
@@ -74,6 +74,8 @@ n_neighbors = [param['n_neighbors'] for param in param_values]
 weights = [param['weights'] for param in param_values]
 p = [param['p'] for param in param_values]
 
+
+
 # 将性能随参数变化的曲线绘制成图表
 fig = plt.figure(figsize=(12, 6))
 
@@ -81,25 +83,32 @@ fig = plt.figure(figsize=(12, 6))
 plt.subplot(1, 3, 1)
 plt.scatter(n_neighbors, scores)
 plt.xlabel('n_neighbors')
-plt.ylabel('Score')
+plt.ylabel('Negative MSE')
 plt.title('Performance vs n_neighbors')
+plt.ylim(-16,-12.5)
 
 # 绘制weights对性能的影响
 plt.subplot(1, 3, 2)
 plt.scatter(weights, scores)
 plt.xlabel('weights')
-plt.ylabel('Score')
+plt.ylabel('Negative MSE')
 plt.title('Performance vs weights')
+plt.ylim(-16,-12.5)
 
 # 绘制p对性能的影响
 plt.subplot(1, 3, 3)
 plt.scatter(p, scores)
 plt.xlabel('p')
-plt.ylabel('Score')
+plt.ylabel('Negative MSE')
 plt.title('Performance vs p')
+plt.ylim(-16,-12.5)
+
 
 plt.tight_layout()
+
 plt.show()
+
+
 
 
 '''

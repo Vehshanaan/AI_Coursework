@@ -2,7 +2,7 @@
 Author: “Vehshanaan” 1959180242@qq.com
 Date: 2023-05-18 16:22:27
 LastEditors: “Vehshanaan” 1959180242@qq.com
-LastEditTime: 2023-05-19 15:31:40
+LastEditTime: 2023-05-20 15:09:57
 FilePath: \AI_Coursework\代码\DecisionTree_iter.py
 Description: 
 
@@ -33,18 +33,18 @@ Xtr, Xtest, Ytr, Ytest = train_test_split(X, Y, test_size=0.2)
 
 
 # 创建交叉验证对象
-cv = KFold(n_splits=5,shuffle=True,random_state=42)
+cv = KFold(n_splits=10,shuffle=True,random_state=42)
 
 dtr = DecisionTreeRegressor()
 
 param_grid = {
-    'max_depth' : range(5,15),
+    'max_depth' : range(5,20),
     "min_samples_leaf": range(1,30),
     "splitter": ['best','random'],
     "random_state": [42]
 }
 
-grid_search = GridSearchCV(dtr, param_grid, cv = cv, scoring = "r2",verbose=1)
+grid_search = GridSearchCV(dtr, param_grid, cv = cv, scoring = "neg_mean_squared_error", verbose=1)
 grid_search.fit(Xtr,Ytr)
 
 best_params = grid_search.best_params_
@@ -63,12 +63,17 @@ max_depths = [param['max_depth'] for param in param_values]
 min_samples_leafs = [param['min_samples_leaf'] for param in param_values]
 splitters = [param['splitter'] for param in param_values]
 
+
+# 将性能随参数变化的曲线绘制成图表
+fig = plt.figure(figsize=(12, 6))
+
 # 绘制n_neighbors对性能的影响
 plt.subplot(1, 3, 1)
 plt.scatter(max_depths, scores)
 plt.xlabel('max_depths')
 plt.ylabel('Score')
 plt.title('Performance vs max_depths')
+plt.ylim(-18,-16)
 
 # 绘制weights对性能的影响
 plt.subplot(1, 3, 2)
@@ -76,6 +81,7 @@ plt.scatter(min_samples_leafs, scores)
 plt.xlabel('min_samples_leafs')
 plt.ylabel('Score')
 plt.title('Performance vs min_samples_leafs')
+plt.ylim(-18,-16)
 
 # 绘制p对性能的影响
 plt.subplot(1, 3, 3)
@@ -83,6 +89,8 @@ plt.scatter(splitters, scores)
 plt.xlabel('splitters')
 plt.ylabel('Score')
 plt.title('Performance vs splitters')
+plt.ylim(-18,-16)
+
 
 plt.tight_layout()
 plt.show()
