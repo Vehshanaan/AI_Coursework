@@ -71,9 +71,9 @@ The Mean Squared Error (MSE), Mean Absolute Error (MAE), and R-squared ($R^2$) a
 
 For the baseline model, use the dummy model in the scikit learn. 
 
-Set all hyperparameters of the dummy to the default value, which means set "parameters" to mean, and both "constants" "quantile" to None.
+Set all hyperparameters of the dummy to the default value, which means set "parameters" to "mean", and both "constants" "quantile" to "None".
 
-With these parameters, the dummy model is not an actual regressor and would always output the mean value of the given training output data. 
+With these parameters, the dummy model is not an actual regressor and would always output the mean value of the given training data outputs. 
 
 \subsection{Hyperparameters}
 
@@ -138,13 +138,13 @@ Use GridSearchCV provided in scikit-learn to search for optimal hyperparameters.
 \begin{itemize}
     \item Use 80\% of the provided data as training test in this step, and 20\% for later result verification.
     \item Use 10-fold cross-validation to make sure the hyperparameters show their generalization ability.
-    \item Use MSE as metric for hyperparameters performance, because MSE could better illustrate the difference between predicted output and ground-truth.
+    \item Use MSE as metric for hyperparameters performance, because MSE could better illustrate the difference between predicted output and ground-truth than $R^2$ or MAE.
 \end{itemize}
 
 \subsubsection{K Neighbors Regressor}
 
 \begin{itemize}
-    \item Preprocess data: Standardize features by removing the mean and scaling to unit variance. Standardizing could make the influence of all features equal.
+    \item Preprocess data: Standardize features by removing the mean and scaling to unit variance. Standardizing could make the influence of all features equal for KNR.
     \item Search for optimal hyperparameters: Candidates: n\_neighbors = 1$\sim$20, weights = 'uniform', 'distance', p = 1,2    
 \end{itemize}
 
@@ -230,9 +230,9 @@ Hyperparameters applied are searching results in the previous section.
 \subsubsection{Decision Tree Regressor}
 
 \begin{itemize}
-    \item \textbf{max\_depth}: An excessively deep decision tree can result in the model being more affected by outliers and noise (overfitting). Additionally, there is a limit to the depth of a decision tree that the dataset can support. Therefore, beyond a certain point, increasing the depth does not improve accuracy. For this dataset, the optimal value for the depth is determined to be 14.
+    \item \textbf{max\_depth}: An excessively deep decision tree can result in the model being more affected by outliers and noise (overfitting). Additionally, there is a limit to the depth of a decision tree that the dataset can support. Therefore, beyond a certain point, increasing the depth does not improve accuracy (as shown in Fig \ref{fig:DTR_training}). For this dataset, the optimal value for the depth is determined to be 14.
     \item \textbf{min\_samples\_leaf}: A higher value of min\_samples\_leaf can limit the growth of the decision tree and serve as a pruning mechanism, improving generalization and accuracy. However, setting it too high can overly simplify the model and prevent the model from performing detailed classification. For this dataset, the balance point is determined to be 13.
-    \item \textbf{splitter}: It is natural for the 'best' splitting strategy to exhibit better performance because it chooses the optimal splitting decisions on every node. The advantage of using the random splitting strategy is that it could generate more efficient decision strategies for complex datasets, but that is at the cost of sacrificing accuracy.
+    \item \textbf{splitter}: It is natural for the 'best' splitting strategy to exhibit better performance because it chooses the optimal splitting decisions on every node. The advantage of using the random splitting strategy is that it could generate more efficient decision strategies for complex datasets, but that is at the cost of accuracy.
 \end{itemize}
 
 
