@@ -350,6 +350,7 @@ INPUT a:/texlive/2023/texmf-dist/tex/latex/base/omscmr.fd
 INPUT a:/texlive/2023/texmf-dist/tex/latex/base/omscmr.fd
 INPUT a:/texlive/2023/texmf-dist/tex/latex/base/omscmr.fd
 INPUT a:/texlive/2023/texmf-dist/tex/latex/base/omscmr.fd
+INPUT a:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
 INPUT Q2.aux
 INPUT ./Q2.out
 INPUT ./Q2.out
@@ -360,3 +361,4 @@ INPUT a:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
 INPUT a:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 INPUT a:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT a:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
+INPUT a:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb
